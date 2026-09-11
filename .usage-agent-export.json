@@ -1,0 +1,506 @@
+{
+  "files": [
+    {
+      "mode": "100644",
+      "path": ".github/workflows/ci.yml",
+      "sha256": "5b8c0409a2840cffa452399b0ecb37682e354e11d81bb5cd8afd632da4c19b87"
+    },
+    {
+      "mode": "100644",
+      "path": ".gitignore",
+      "sha256": "01f6962677a88fab3e104c0dbc757490200b1e6be65f253ed106c3a74982b86a"
+    },
+    {
+      "mode": "100644",
+      "path": ".usage-agent-source.json",
+      "sha256": "c7828da1b5027f10059ec350e9f11d9c29af8246a91455d795de8c42b28a54f3"
+    },
+    {
+      "mode": "100644",
+      "path": "CONTRIBUTING.md",
+      "sha256": "b0c357373d0994a271a5045494c6ff6c75f6bc12065159817ee2cb9e5f7d7adf"
+    },
+    {
+      "mode": "100644",
+      "path": "LICENSE",
+      "sha256": "7adfee729842887b4dc78bdf6dd48dbe864e09da2e0c98a39c37febb8301c242"
+    },
+    {
+      "mode": "100644",
+      "path": "LICENSE_SCOPE.md",
+      "sha256": "9823fad35af67e9dc17b934b23593eae206c1c872ec2fa4306abba1d3f997c78"
+    },
+    {
+      "mode": "100644",
+      "path": "README.md",
+      "sha256": "75221a6e8713c16152baec0f679c2352f434aad42d7e4cd84b1a53e29d53d250"
+    },
+    {
+      "mode": "100644",
+      "path": "SECURITY.md",
+      "sha256": "f9d79c6a0bf777b005cc8c8c37dbc38192faefb1df8d64f78ac6a6cfc55478f0"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/AppInfo.swift",
+      "sha256": "777d85574af173ba9cf26fa06d0989d004e8cf484760cc4e219777fac19cccd9"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/AppStyle.swift",
+      "sha256": "0e9e74b2ad78c643f66480cb8994dedcc536d8a901b2638f44b7d9e465cf6eff"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "sha256": "50218ab747d69194262d41c62f7333a8d1068f3055140882504df146bd9c04cf"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_128x128.png",
+      "sha256": "1d33a0200dc4912d312912b2e0b3c85f532eae10a56c597c799670681112347d"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png",
+      "sha256": "cd681d92232ee803e9a84e129dfc3c083d2f892de4dd94fa5121647fe76168a9"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_16x16.png",
+      "sha256": "38a92d633ef0a33575b8a2dafee5cee6318091bb47877d58ae12c44326d62044"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_16x16@2x.png",
+      "sha256": "a4e0f281d37961e2154c71eac863c2b3320474132f6397bd3a9856f461889b3c"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_256x256.png",
+      "sha256": "cd681d92232ee803e9a84e129dfc3c083d2f892de4dd94fa5121647fe76168a9"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_256x256@2x.png",
+      "sha256": "94de488efd3223b459212db1c083d32201e9cdabda3caeeb310332e494c590b7"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_32x32.png",
+      "sha256": "a4e0f281d37961e2154c71eac863c2b3320474132f6397bd3a9856f461889b3c"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_32x32@2x.png",
+      "sha256": "0a7e95d9c536eb752a452a6659bc4a5d29d258a4fbe263d822f8decdbc1b0118"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_512x512.png",
+      "sha256": "94de488efd3223b459212db1c083d32201e9cdabda3caeeb310332e494c590b7"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
+      "sha256": "f150861a81abc4c08927e5e8edd4436350a649f8ac5832372972adfd8421a8ae"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/Contents.json",
+      "sha256": "0fd49ba3c3585c709678e0046a821c3c60685ec7063720d30d3a3448be3a208b"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/ProviderClaude.imageset/Contents.json",
+      "sha256": "3d20cfae8fc5f9072219ca5a8866d934aee6f491ed53cebb097d0cc58ce4e485"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/ProviderClaude.imageset/claude.svg",
+      "sha256": "a9747102c0eed54b4df63283af7180ab6e41550ced3ae58faa1207e6a202aa57"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/ProviderOpenAI.imageset/Contents.json",
+      "sha256": "5b79135a66a488cd3151b5b425aabacdd62c9ee8f7c0f0a62e1a5846d7ef4b5e"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/ProviderOpenAI.imageset/openai.svg",
+      "sha256": "6839fc7ce940b0e711e0d00fb288aa09ce8f7587862b12d292108f97066bf1c2"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/ProviderX.imageset/Contents.json",
+      "sha256": "0180e143823eb985f1a2145ecb50ff9901e3915c8d4fedf8a940b16b0a6ae435"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Assets.xcassets/ProviderX.imageset/x.svg",
+      "sha256": "0a4c85d9813218ea2f37b8faea10b3ab4199d09d1dd497edc58170a64311547e"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/ClaudeWindowAlignmentController.swift",
+      "sha256": "c50af0b097b625759bf1e8bda826ef18058253ef3af8e7d44683cd1675e2645d"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/DashboardView.swift",
+      "sha256": "267761ce7ef1d148217141dc83c0d401fe2dfbf97640e807ecef6581e5dbf0f3"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Info.plist",
+      "sha256": "65f8bec39bdb027b15ddf4ffc24abb3c801a67ff1eb86fe4c73ab787bfddbe49"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/LiveUsageCollector.swift",
+      "sha256": "1ea3891e0fdc3d90a0b7de0584164c61db679afd9bd13dc54f5c8b877862eab3"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/LoginItemToggle.swift",
+      "sha256": "f16fc5387e816fd427ada2b50ddc04a91fa1db4195e85e30ad0ebdc7dd724ec8"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/MacAwakeController.swift",
+      "sha256": "5fb5899ed4e50a5d22461131d8430fef2f132c1deebf11eb4ea67ea8f550e7b5"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/MenuBarProviderIcon.swift",
+      "sha256": "2701ca77b6d0094879e36e0e1174cc8685afb681b9b832c04f9b9b5646bc7a0e"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/PrivacyInfo.xcprivacy",
+      "sha256": "a1edc5ecf6cf9a1cb61283de92f66b9afcd35651df2aafba4f69b1ed57c1f6e2"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/ProviderBrand.swift",
+      "sha256": "2d50000f5154b3affe490d85db1f009231e02b1f9bcc2188b0d9726e79fd8aaf"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/ThirdPartyNoticesView.swift",
+      "sha256": "2552191d16a47966e3b8a0061b69d031e839c36bc38ea8468f5b00ac1540d22e"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/Usage.entitlements",
+      "sha256": "b8608c6cfb76c681001db84730a594645703adefc23c1c2ee274d3084c92557f"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/UsageApp.swift",
+      "sha256": "429cf2f80f4e816072d327088017d98d8fa380dd62a00e13a24d206348f887ae"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageApp/UsageMonitor.swift",
+      "sha256": "455a9da28f92d9e071262becac4ae87a484dedfc7af00770cda69a7c57a7023f"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/ClaudeScopedWindowLabel.swift",
+      "sha256": "dffd0ac4679f44e874d3737c7a4a8f689fe28c550f44c754b4050cc9ce741cb7"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/ClaudeWindowAlignment.swift",
+      "sha256": "6173ced1c4ee6e4d713d51a85e34460420939064236f755148b8fdc359a58840"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/GrokBillingProxyResponse.swift",
+      "sha256": "440c377c343e1d1dad8f4a0e3163736f91722844e417e6967595aa02773f1f88"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/MenuBarSummary.swift",
+      "sha256": "f9721ea8f4a893857604e5bae7f6da93196c15414c07bd4d9ad33cc96cc52932"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/ProviderUsage.swift",
+      "sha256": "d966477a978b54ca0b2aab5e69bdd38af23c19d700611ae8e74964b9e77e6e1b"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/ReviewerSampleMode.swift",
+      "sha256": "c8cfad952a02a084254ba7d794ce1d12bc2a8178597ebad0cc535ea11c121679"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/UsageBrand.swift",
+      "sha256": "c4d649f11084522e398be4af66c892cd8c10371dd0378a05db098c0347ce28a9"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/UsageResetBoundarySchedule.swift",
+      "sha256": "6ae69e91070ea2668e40ddcdc67c7bd43b2b5fe1b498ffaf7003ea44c88e2cec"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/UsageWidgetSnapshot.swift",
+      "sha256": "f1ec34afdd3f9a16f1fe67df50147d793d291a7d67ffeb8d64d4a9178fdf56cf"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageCore/UsageWidgetSnapshotStore.swift",
+      "sha256": "8de9b3ef4910ffb83ee5699c678633e5c615a61a64b28104bc4f62094606eaf5"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageWidget/Info.plist",
+      "sha256": "7e6f5dacbe66ef70e3faa54d19a0ebf4a99537e46a2744619a29f36f3a100768"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageWidget/UsageStripProvider.swift",
+      "sha256": "e1acb486ca9e9117f48ae607c83902aa65f27f14493555dbb5f220281c193ebc"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageWidget/UsageStripViews.swift",
+      "sha256": "830d651110865146c7fad063109f92fd7ce684ed5d6e0be7bbbb4549d227f656"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageWidget/UsageWidget.entitlements",
+      "sha256": "70629f845d87adfdac3f0c6888b63f1e4e2b05c03605396137d094138af4f825"
+    },
+    {
+      "mode": "100644",
+      "path": "Sources/UsageWidget/UsageWidgetBundle.swift",
+      "sha256": "9a2f22d7bfeb7f4350cd3cb6ab5acc7e6e3bfd72c1bb86ee36f133b9c66d98b2"
+    },
+    {
+      "mode": "100644",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "4ef1de813f74a320ad4137b4d1e41e326071049bc1304fea38932244e506ee05"
+    },
+    {
+      "mode": "100644",
+      "path": "TRADEMARKS.md",
+      "sha256": "350d00fcd55208fc32fd3a57e3155788ee126d9f21c3b4197d878108dd4830e0"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageAppLogicTests/AppInfoTests.swift",
+      "sha256": "d1a05cf64ae2c787da5366a60add90c833a25502688c8ad6bf3c5fa0bf5feece"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageAppLogicTests/MacAwakeControllerTests.swift",
+      "sha256": "1efd4ec87eb165f6f6c979b643658bc1099a8b98468cc6b8bd6f1a4ef23bea55"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageCoreTests/ClaudeScopedWindowLabelTests.swift",
+      "sha256": "13eae5a7c1b2d2cc1e613229b4d50d3639715020438b1b67bfffef5bfce17266"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageCoreTests/ClaudeWindowAlignmentTests.swift",
+      "sha256": "86470efa451a76e3b1dc6e303e43653cd74c1571c3136ef0976065b9b3384ed0"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageCoreTests/GrokBillingProxyResponseTests.swift",
+      "sha256": "4e0cb270990acc74891c889f8522cefa1df4ed5ab45b32e6431eb82b9e374458"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageCoreTests/MenuBarSummaryTests.swift",
+      "sha256": "adbda3ce6f0c8c2190ec1035d16c18982f3f2e75ae99c23623d900f879eda1b3"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageCoreTests/ProviderUsageMappingTests.swift",
+      "sha256": "b790ea862025cfbe1e3afaf3167b2ebfad20446a79a04e3e36757e2927c3118f"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageCoreTests/UsageResetBoundaryScheduleTests.swift",
+      "sha256": "1cf874b93e3b827fc3c3d4882b63d8705eae8d579d452ac7080dd5850cdd645b"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageCoreTests/UsageWidgetSnapshotTests.swift",
+      "sha256": "9a27115b3df1662c3c83999de003ebdb039dfc18304b58f5707b327121be4239"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/README.md",
+      "sha256": "746f6091f44b2a7c288270462cc15e3ba2355327d0ddb3f9041949e37309ae6a"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.Core/JsonNavigator.cs",
+      "sha256": "01b06b42bfefddd7bef0e6c33e2002cd9aeb5e5a25fa1dd2ae2976ec9c11123b"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.Core/Properties/AssemblyInfo.cs",
+      "sha256": "057e3f2d3fca47cb50b534aa8b52a58619e8b58b9bc6ac74ea89cb8d704a91d6"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.Core/ProviderUsage.cs",
+      "sha256": "e5e764f9df482c9793a678df35727a661939119ada27451113e2a2924e1bb59f"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.Core/Usage.Windows.Core.csproj",
+      "sha256": "36388ed7dcc092a933b69df01cda3afde0e662445e5ef6543a593c3bd97f2a5a"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.Core/UsageParsers.cs",
+      "sha256": "7774a5f7989e15b33193ce84b86d1558b94e2049b1cc6b73562b7df29510f5ff"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.Tests/Program.cs",
+      "sha256": "96cb187699df5438e2f30af826d890dff967582f084c2995a1d8c52ac06508cc"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.Tests/Properties/AssemblyInfo.cs",
+      "sha256": "de3f49319f63b1520afed777ff7a3a0d4136d1f095070a391aae324d2fd8253d"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.Tests/Usage.Windows.Tests.csproj",
+      "sha256": "3a09c8bc7d7cec7ab5c0a5054d81d5c9d3d66debce3fabd1b670f1f496de2625"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows.sln",
+      "sha256": "f8a161a5738a7f609aed0aaa5b5844e4046026e1b75f0b524595f0c984966b2b"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/App.config",
+      "sha256": "5d4cd327e430b0139d55bb5204d25e3944214cbeaa75a3790bb6771ed04dc26d"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/Assets/claude.png",
+      "sha256": "844f0436c229d7ff250cbcffbf72f654186ccbc7f330f8b521834267a36eba38"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/Assets/openai.png",
+      "sha256": "e5455e0ee3d82f68b7aa3085e8187021a1faa5f67c6592434d4b610c068437b1"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/Assets/x.png",
+      "sha256": "f32207701100d2160ecaa7a64ba0c4ff8d44bdb62bddf6d4b6d3f82d5ddaa79e"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/CliCommand.cs",
+      "sha256": "ebc7eed96f65e2dc70c406cf6f47babd8bdf61639600e41f6da13ef32b5ce197"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/JsonRpcProcess.cs",
+      "sha256": "0a180228bcc20eab987075ef66553145831cc046162b02ead68a517fe591fdb0"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/NativeMethods.cs",
+      "sha256": "2feda79097d1283e43e38c8e7dddd7e69923fb8055e1613089b608944206c743"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/Program.cs",
+      "sha256": "77b2c7b501fc2410045db2224bc8d1dfed7aa32f5896210f290a6dc1b23e942b"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/Properties/AssemblyInfo.cs",
+      "sha256": "4b941d4843440a2752042de0ec2a0d1c63fd28be2e8b3bacd71488fd0237e619"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/ProviderClients.cs",
+      "sha256": "796a26c3b48a513f0387c873157ff8d7dede65229f16be3d7bee132df970c78f"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/ProviderViewState.cs",
+      "sha256": "67cc910defec1364781e5e56aed909d247f05632a50f1ae86d958415ee430e44"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/TaskbarHost.cs",
+      "sha256": "4aab308da3a30e291620e8a5752a3c8b1c2a310cdda8bb5efeb6a69c2cdb24e7"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/ThemePalette.cs",
+      "sha256": "634be56a4245f130f2b36e2d3ffee95f7af6bf74f38c3371549b5afc162687bd"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/TrayIconFactory.cs",
+      "sha256": "ae5c40f386fc5c6abd481e5b16ff6d8a3efcf2ac59328bd8bd4cf1e91a4f6ad8"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/Usage.Windows.csproj",
+      "sha256": "bad1f586883353c6655405755e12478b9090a6cbbeba926403f62d39f34896da"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/UsageApplicationContext.cs",
+      "sha256": "10da9bf1a4a493e861c38997bc12bb213d02740d7b7a6bfc903792427540b375"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/UsageStripForm.cs",
+      "sha256": "556a43d8337c42481eefb95609c76f4a6e6f2efd8db93c22046bdb3c4cfd83b7"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/Usage.Windows/app.manifest",
+      "sha256": "b1c84b1190f36e1c0f056afa360d1ca1fd07aed8943d8e66b147852c974166b3"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/build.ps1",
+      "sha256": "2880cdc9bc97340edbee8f7311a4ebbeb10bc40dfb590a8ff954bbee6ade8536"
+    },
+    {
+      "mode": "100644",
+      "path": "Windows/package.ps1",
+      "sha256": "520af78b849874dfe124a35ab72b9ceb0a8adca12b94cf13f41b454e8734a72a"
+    },
+    {
+      "mode": "100644",
+      "path": "docs/GROK_ZERO_USAGE_POLICY.md",
+      "sha256": "2d76b61b1a90d9f48c7579ac6a36c79cd8b03d6e7202d3317b4b2821399a456f"
+    },
+    {
+      "mode": "100644",
+      "path": "project.yml",
+      "sha256": "4c13ab1f217047f024a8a64d54623d02d01b068ff9d756fdde7686a6979da1ce"
+    },
+    {
+      "mode": "100755",
+      "path": "scripts/verify_menubar_bundle.sh",
+      "sha256": "e3b88ad7d6ebe0941411ca3031f3933892d8bf0033cb9b24f993df2e7fd9bc18"
+    }
+  ],
+  "schema_version": 2,
+  "source_revision": "5307b14215fe8f67c1a6806f60034f4900138aa9"
+}

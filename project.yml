@@ -1,0 +1,157 @@
+name: Usage
+
+options:
+  bundleIdPrefix: com.whyun
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "26.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    CODE_SIGN_STYLE: Automatic
+    # Apple Developer Team ID. This must match the signing certificate OU and
+    # existing team profile TeamIdentifier (not the certificate user UID).
+    DEVELOPMENT_TEAM: XXXXXXXXXX
+    # Shared across the app and the widget extension so CFBundleVersion can
+    # never drift between them (mismatched versions break extension loading).
+    MARKETING_VERSION: "2.0.38"
+    CURRENT_PROJECT_VERSION: "40"
+    # macOS Developer ID app groups use the team-prefixed form, not the iOS
+    # `group.` form. Both entitlements files and both Info.plists expand this.
+    USAGE_APP_GROUP_ID: "$(DEVELOPMENT_TEAM).com.example.usageagents"
+
+packages:
+  CodexBar:
+    # Fork of steipete/CodexBar pinned one commit past upstream v0.55.0
+    # (061593ca). The extra commit makes the Claude CLI `/status` identity
+    # probe optional; Usage turns it off because that round trip returns
+    # nothing on Claude CLI 2.1.2xx and cost 12 s per refresh. Move back to
+    # upstream once the same option (or an equivalent fix) lands there.
+    url: https://github.com/hydrojwh/CodexBar.git
+    revision: 122b4e8f188300483eb1d75cedbcfb6238cacb38
+
+targets:
+  UsageCore:
+    type: framework
+    platform: macOS
+    sources:
+      - path: Sources/UsageCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.usageagents.core
+        GENERATE_INFOPLIST_FILE: YES
+
+  Usage:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/UsageApp
+      - path: THIRD_PARTY_NOTICES.md
+        buildPhase: resources
+    dependencies:
+      - target: UsageCore
+      - target: UsageWidget
+        codeSign: true
+      - package: CodexBar
+        product: CodexBarCore
+    info:
+      path: Sources/UsageApp/Info.plist
+      properties:
+        CFBundleDisplayName: Usage Agents
+        CFBundleName: Usage
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        UsageAppGroupID: "$(USAGE_APP_GROUP_ID)"
+        # MenuBarExtra owns the app's menu-bar-only activation behavior.
+        # Keep this false; the current macOS 26 configuration was validated with this setting.
+        LSUIElement: false
+        NSHumanReadableCopyright: "© 2026 HydRoMo. All rights reserved."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.usageagents
+        PRODUCT_NAME: Usage
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_ENTITLEMENTS: Sources/UsageApp/Usage.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+  UsageWidget:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: Sources/UsageWidget
+      # Shared provider marks: the widget bundle needs its own copy of the
+      # vector assets because app and extension resources live in separate
+      # bundles.
+      - path: Sources/UsageApp/Assets.xcassets
+    dependencies:
+      # UsageCore must not be embedded again inside the appex; the extension
+      # reaches the app's copy through LD_RUNPATH_SEARCH_PATHS.
+      - target: UsageCore
+        embed: false
+      - sdk: SwiftUI.framework
+      - sdk: WidgetKit.framework
+    info:
+      path: Sources/UsageWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Usage Agents
+        CFBundleName: UsageWidget
+        CFBundlePackageType: XPC!
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        UsageAppGroupID: "$(USAGE_APP_GROUP_ID)"
+        LSMinimumSystemVersion: "14.0"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.usageagents.widget
+        PRODUCT_NAME: UsageWidget
+        APPLICATION_EXTENSION_API_ONLY: true
+        ENABLE_APP_SANDBOX: true
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_ENTITLEMENTS: Sources/UsageWidget/UsageWidget.entitlements
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks"
+
+  UsageCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/UsageCoreTests
+    dependencies:
+      - target: UsageCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.usageagents.core-tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: ""
+        BUNDLE_LOADER: ""
+
+  UsageAppLogicTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/UsageAppLogicTests
+      - path: Sources/UsageApp/MacAwakeController.swift
+      - path: Sources/UsageApp/AppInfo.swift
+    dependencies:
+      - target: UsageCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.usageagents.app-logic-tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: ""
+        BUNDLE_LOADER: ""
+
+schemes:
+  Usage:
+    build:
+      targets:
+        Usage: all
+        UsageCore: all
+        UsageCoreTests: [test]
+        UsageAppLogicTests: [test]
+    test:
+      targets:
+        - UsageCoreTests
+        - UsageAppLogicTests
