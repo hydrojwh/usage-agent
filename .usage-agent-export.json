@@ -13,7 +13,7 @@
     {
       "mode": "100644",
       "path": ".usage-agent-source.json",
-      "sha256": "c7828da1b5027f10059ec350e9f11d9c29af8246a91455d795de8c42b28a54f3"
+      "sha256": "c71eb2afd0174ccce75a7188ef2a9a09135a0dea19572726e6a7a68abe981905"
     },
     {
       "mode": "100644",
@@ -492,6 +492,11 @@
     },
     {
       "mode": "100644",
+      "path": "docs/menubar-popover.png",
+      "sha256": "0908e0b3f22ecdea4599822bd3f56a41e5553b43f29952ea983b8653d72aef01"
+    },
+    {
+      "mode": "100644",
       "path": "project.yml",
       "sha256": "4c13ab1f217047f024a8a64d54623d02d01b068ff9d756fdde7686a6979da1ce"
     },
@@ -502,5 +507,5 @@
     }
   ],
   "schema_version": 2,
-  "source_revision": "5307b14215fe8f67c1a6806f60034f4900138aa9"
+  "source_revision": "0bef334b04320b8393081aaff46a57f4af5532ec"
 }
