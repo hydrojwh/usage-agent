@@ -13,7 +13,7 @@
     {
       "mode": "100644",
       "path": ".usage-agent-source.json",
-      "sha256": "13767c76449f6391d8bf26ec2f9171cecddbd19f6a220c0c41415b99da9438d6"
+      "sha256": "26366ca2f13c9b821f139663d2806642da8b64d8e1c62ae232d08f21af01baa0"
     },
     {
       "mode": "100644",
@@ -33,7 +33,7 @@
     {
       "mode": "100644",
       "path": "README.md",
-      "sha256": "0786adf426f5d059de65038bcdee446b949cda970911b046d84b4cf34129fda3"
+      "sha256": "c4daaa267b9e0f5146a02801e44467955b92aa4ae952c06f1b97c472b56dbd25"
     },
     {
       "mode": "100644",
@@ -507,5 +507,5 @@
     }
   ],
   "schema_version": 2,
-  "source_revision": "c7dd9b03a30eaa88b1a79e3ad05a69aa8440e52f"
+  "source_revision": "5cd29c544679d0def214a0412a3ca64be874cb75"
 }

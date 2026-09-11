@@ -9,8 +9,10 @@ subscription quota of Claude, Codex, and Grok.
 
 ![Usage Agents menu-bar popover](docs/menubar-popover.png)
 
-This repository is the public source mirror of Usage Agents 2.0.38. It does not
-currently publish compiled applications, DMGs, installers, or GitHub Releases.
+This repository is the public source mirror of Usage Agents 2.0.38. Notarized
+macOS builds are published on the
+[Releases](https://github.com/hydrojwh/usage-agent/releases) page. Windows builds
+are not published yet.
 
 HydRoMo-owned portions are source-available for personal and noncommercial use
 under the PolyForm Noncommercial License 1.0.0. This is not OSI open source,
