@@ -7,6 +7,8 @@ subscription quota of Claude, Codex, and Grok.
 [Claude] 82  [OpenAI] 63  [X] 91
 ```
 
+![Usage Agents menu-bar popover](docs/menubar-popover.png)
+
 This repository is the public source mirror of Usage Agents 2.0.38. It does not
 currently publish compiled applications, DMGs, installers, or GitHub Releases.
 
