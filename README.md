@@ -4,6 +4,12 @@
 ![Platform](https://img.shields.io/badge/platform-macOS%2014%2B-black)
 ![License](https://img.shields.io/badge/license-PolyForm%20Noncommercial-6a7f37)
 
+<p align="center">
+  <a href="https://github.com/hydrojwh/usage-agent/releases/latest/download/Usage.dmg">
+    <img src="docs/download-macos.svg" alt="Download the notarized macOS DMG" width="288">
+  </a>
+</p>
+
 Usage is a native macOS menu-bar and Windows taskbar monitor for the remaining
 subscription quota of Claude, Codex, and Grok.
 
@@ -12,7 +18,8 @@ subscription quota of Claude, Codex, and Grok.
 The button above downloads the latest notarized DMG directly — it opens on
 macOS 14+ without Gatekeeper warnings. The
 [Releases](https://github.com/hydrojwh/usage-agent/releases) page has notes and
-SHA-256 checksums. Windows builds are not published yet.
+SHA-256 checksums. The Windows taskbar companion is published as source only:
+it has not been release-tested yet, and no Windows build is distributed.
 
 HydRoMo-owned portions are source-available for personal and noncommercial use
 under the PolyForm Noncommercial License 1.0.0. This is not OSI open source,

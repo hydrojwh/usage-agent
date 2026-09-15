@@ -28,7 +28,7 @@
     {
       "mode": "100644",
       "path": ".usage-agent-source.json",
-      "sha256": "3a2140f36e8bd1523bbbc7a4595e2ddf2e4dc7095f56d9a2f963f41abe29cc51"
+      "sha256": "2e2ba72b63f65324afa295caef1f29fe5d3a2a7049c10348a1396249d8b71691"
     },
     {
       "mode": "100644",
@@ -48,7 +48,7 @@
     {
       "mode": "100644",
       "path": "README.md",
-      "sha256": "d2110008eec9b7cb1baf682cf05e20895ca3d4c48017ca5a56b6e4ad8686e76c"
+      "sha256": "32232baaba3bb8b94379470f5f2598a831d1ab89325439978601ea16b6299f92"
     },
     {
       "mode": "100644",
@@ -507,6 +507,11 @@
     },
     {
       "mode": "100644",
+      "path": "docs/download-macos.svg",
+      "sha256": "00e275e166d20bb4c4689e94adcee7a9ee4aec6ca18c92e76f5fd104fc233c7f"
+    },
+    {
+      "mode": "100644",
       "path": "docs/menubar-popover.png",
       "sha256": "0908e0b3f22ecdea4599822bd3f56a41e5553b43f29952ea983b8653d72aef01"
     },
@@ -522,5 +527,5 @@
     }
   ],
   "schema_version": 2,
-  "source_revision": "1dd89db9a01d4c9f18e2d701ffa63fb4f0b7e68c"
+  "source_revision": "9d334f232de5b693652a0754e89edb5f95f4f99d"
 }
