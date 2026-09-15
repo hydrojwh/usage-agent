@@ -1,18 +1,18 @@
 # Usage Agents
 
+[![Download for macOS](https://img.shields.io/badge/⬇%20Download-macOS%20DMG-1f6feb)](https://github.com/hydrojwh/usage-agent/releases/latest/download/Usage.dmg)
+![Platform](https://img.shields.io/badge/platform-macOS%2014%2B-black)
+![License](https://img.shields.io/badge/license-PolyForm%20Noncommercial-6a7f37)
+
 Usage is a native macOS menu-bar and Windows taskbar monitor for the remaining
 subscription quota of Claude, Codex, and Grok.
 
-```text
-[Claude] 82  [OpenAI] 63  [X] 91
-```
-
 ![Usage Agents menu-bar popover](docs/menubar-popover.png)
 
-This repository is the public source mirror of Usage Agents 2.0.38. Notarized
-macOS builds are published on the
-[Releases](https://github.com/hydrojwh/usage-agent/releases) page. Windows builds
-are not published yet.
+The button above downloads the latest notarized DMG directly — it opens on
+macOS 14+ without Gatekeeper warnings. The
+[Releases](https://github.com/hydrojwh/usage-agent/releases) page has notes and
+SHA-256 checksums. Windows builds are not published yet.
 
 HydRoMo-owned portions are source-available for personal and noncommercial use
 under the PolyForm Noncommercial License 1.0.0. This is not OSI open source,

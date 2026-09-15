@@ -2,6 +2,21 @@
   "files": [
     {
       "mode": "100644",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "sha256": "7cddfbf98c80f8a14d36203b92d7d52d2a590e5135862a3d4714a8ca8a8ef949"
+    },
+    {
+      "mode": "100644",
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "sha256": "3be9dfe0fa74902c763b137f643561415a8273e17d8dab0e28fa07745f82bcb1"
+    },
+    {
+      "mode": "100644",
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "sha256": "202fb68c1708bdd8e2e1ab8947b6edf955259badd641aaf14d2c98c642e4249c"
+    },
+    {
+      "mode": "100644",
       "path": ".github/workflows/ci.yml",
       "sha256": "5b8c0409a2840cffa452399b0ecb37682e354e11d81bb5cd8afd632da4c19b87"
     },
@@ -13,7 +28,7 @@
     {
       "mode": "100644",
       "path": ".usage-agent-source.json",
-      "sha256": "26366ca2f13c9b821f139663d2806642da8b64d8e1c62ae232d08f21af01baa0"
+      "sha256": "3a2140f36e8bd1523bbbc7a4595e2ddf2e4dc7095f56d9a2f963f41abe29cc51"
     },
     {
       "mode": "100644",
@@ -33,7 +48,7 @@
     {
       "mode": "100644",
       "path": "README.md",
-      "sha256": "c4daaa267b9e0f5146a02801e44467955b92aa4ae952c06f1b97c472b56dbd25"
+      "sha256": "d2110008eec9b7cb1baf682cf05e20895ca3d4c48017ca5a56b6e4ad8686e76c"
     },
     {
       "mode": "100644",
@@ -507,5 +522,5 @@
     }
   ],
   "schema_version": 2,
-  "source_revision": "5cd29c544679d0def214a0412a3ca64be874cb75"
+  "source_revision": "1dd89db9a01d4c9f18e2d701ffa63fb4f0b7e68c"
 }

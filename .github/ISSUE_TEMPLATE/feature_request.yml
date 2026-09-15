@@ -1,0 +1,17 @@
+name: Feature request
+description: Suggest a provider, metric, or behavior change
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to see?
+      description: The situation you want handled, not only the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: What should it do instead?
+    validations:
+      required: false

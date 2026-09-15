@@ -1,0 +1,54 @@
+name: Bug report
+description: Something in the menu bar, popover, or widgets looks wrong
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report. Usage reads your locally
+        installed provider CLIs, so please also say whether they work on
+        their own.
+  - type: input
+    id: version
+    attributes:
+      label: Usage version
+      description: Shown in the popover footer, e.g. 2.0.34
+    validations:
+      required: true
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Provider affected
+      options:
+        - Claude
+        - Codex
+        - Grok
+        - Multiple / not provider-specific
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: e.g. 26.1
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: What you expected and what you saw instead. A screenshot of the popover helps.
+    validations:
+      required: true
+  - type: textarea
+    id: cli
+    attributes:
+      label: Provider CLI check
+      description: |
+        Is the provider CLI (`claude`, `codex`, or `grok`) installed and
+        signed in, and does its own usage readout still work? Redact
+        anything private.
+      placeholder: |
+        e.g. `claude` runs and is signed in; its usage view still shows limits.
+    validations:
+      required: false
