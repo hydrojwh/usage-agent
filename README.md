@@ -5,15 +5,20 @@
 ![License](https://img.shields.io/badge/license-PolyForm%20Noncommercial-6a7f37)
 
 <p align="center">
+  <br />
   <a href="https://github.com/hydrojwh/usage-agent/releases/latest/download/Usage.dmg">
     <img src="docs/download-macos.svg" alt="Download the notarized macOS DMG" width="288">
   </a>
+  <br />
+  <br />
 </p>
 
 Usage is a native macOS menu-bar and Windows taskbar monitor for the remaining
 subscription quota of Claude, Codex, and Grok.
 
-![Usage Agents menu-bar popover](docs/menubar-popover.png)
+<p align="center">
+  <img src="docs/menubar-popover.png" alt="Usage Agents menu-bar popover" width="455">
+</p>
 
 The button above downloads the latest notarized DMG directly — it opens on
 macOS 14+ without Gatekeeper warnings. The

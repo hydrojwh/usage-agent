@@ -28,7 +28,7 @@
     {
       "mode": "100644",
       "path": ".usage-agent-source.json",
-      "sha256": "2e2ba72b63f65324afa295caef1f29fe5d3a2a7049c10348a1396249d8b71691"
+      "sha256": "0d491dc036ebb621c975ec6ea259d6dabc37c755e4cae7c51aa74dcbd246eca1"
     },
     {
       "mode": "100644",
@@ -48,7 +48,7 @@
     {
       "mode": "100644",
       "path": "README.md",
-      "sha256": "32232baaba3bb8b94379470f5f2598a831d1ab89325439978601ea16b6299f92"
+      "sha256": "551da0b1125aa790e10bb8669ec5e74424bf84c5e410459657e03ccfb5b6bec7"
     },
     {
       "mode": "100644",
@@ -527,5 +527,5 @@
     }
   ],
   "schema_version": 2,
-  "source_revision": "9d334f232de5b693652a0754e89edb5f95f4f99d"
+  "source_revision": "49b5ee7ce2bb0b2cfce039ca5e2bc6295b3c5b05"
 }
