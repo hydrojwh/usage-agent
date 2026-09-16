@@ -15,8 +15,8 @@ settings:
     DEVELOPMENT_TEAM: XXXXXXXXXX
     # Shared across the app and the widget extension so CFBundleVersion can
     # never drift between them (mismatched versions break extension loading).
-    MARKETING_VERSION: "2.0.38"
-    CURRENT_PROJECT_VERSION: "40"
+    MARKETING_VERSION: "2.0.45"
+    CURRENT_PROJECT_VERSION: "47"
     # macOS Developer ID app groups use the team-prefixed form, not the iOS
     # `group.` form. Both entitlements files and both Info.plists expand this.
     USAGE_APP_GROUP_ID: "$(DEVELOPMENT_TEAM).com.example.usageagents"

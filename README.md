@@ -38,7 +38,7 @@ EULA.
 - Native SwiftUI `MenuBarExtra(.window)` app for macOS 14+
 - Small and medium WidgetKit widgets
 - Native .NET Framework 4.8 taskbar companion for Windows 10/11
-- Five-minute automatic refresh and manual refresh
+- Auto-refresh from 10 seconds to 1 hour (five-minute default) and manual refresh
 - Provider-specific remaining percentages, reset times, and last-good-value handling
 - Optional account-identifier display, off by default
 - No Usage account, cloud database, analytics service, or browser-cookie import

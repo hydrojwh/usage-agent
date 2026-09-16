@@ -24,7 +24,7 @@ final class UsageMonitor: ObservableObject {
     @Published private(set) var widgetSyncError: String?
 
     private let collector: any ProviderUsageCollecting
-    private let refreshInterval: Duration
+    private(set) var refreshInterval: Duration
     private let defaults: UserDefaults
     private var refreshLoop: Task<Void, Never>?
     /// Reset boundaries this process has already refreshed for. Bounded by
@@ -70,7 +70,6 @@ final class UsageMonitor: ObservableObject {
         self.refreshLoop = Task { [weak self] in
             guard let self else { return }
             await self.refresh()
-
             while !Task.isCancelled {
                 // A window that resets mid-interval would otherwise keep showing
                 // the previous window's numbers until the next regular tick:
@@ -102,6 +101,23 @@ final class UsageMonitor: ObservableObject {
                 }
             }
         }
+    }
+
+    /// Adjusts the auto-refresh cadence at runtime. The value is clamped to
+    /// the settings slider's range and quantized to its 10-second steps. An
+    /// idle loop restarts immediately so a shorter interval takes effect
+    /// without waiting out the previous sleep; a refresh already in flight
+    /// picks the new interval up at its next sleep.
+    func setRefreshInterval(seconds: Double) {
+        let interval = Duration.seconds(
+            UsageDisplaySettings.refreshIntervalSeconds(
+                forSteps: UsageDisplaySettings.clampedRefreshIntervalSteps(forSeconds: seconds)))
+        guard interval != self.refreshInterval else { return }
+        self.refreshInterval = interval
+        guard self.refreshLoop != nil, !self.isRefreshing else { return }
+        self.refreshLoop?.cancel()
+        self.refreshLoop = nil
+        self.start()
     }
 
     /// The next wake-up worth taking before the regular cadence, or nil to keep it.

@@ -21,7 +21,16 @@ enum AppFont {
 /// 팝오버를 줄인다. 예외적으로 긴 내용만 제한 높이 안에서 스크롤한다.
 enum AppLayout {
     static let popoverWidth: CGFloat = 440
-    static let maximumContentHeight: CGFloat = 390
+    static let maximumCardContentHeight: CGFloat = 390
+    /// Grouped anchor panels live inside the card viewport, so each visible
+    /// one raises the cap; without this, provider cards below two anchors fall
+    /// under the fold and look missing.
+    static let anchorPanelHeightAllowance: CGFloat = 110
+
+    static func maximumContentHeight(anchorPanelCount: Int) -> CGFloat {
+        self.maximumCardContentHeight
+            + self.anchorPanelHeightAllowance * CGFloat(max(0, anchorPanelCount))
+    }
     static let headerHorizontalPadding: CGFloat = 14
     static let headerVerticalPadding: CGFloat = 8
     static let contentHorizontalPadding: CGFloat = 12

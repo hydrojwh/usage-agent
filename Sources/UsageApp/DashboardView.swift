@@ -13,11 +13,15 @@ struct DashboardView: View {
     @AppStorage(UsageDisplaySettings.showsClaudeKey) private var showsClaude = true
     @AppStorage(UsageDisplaySettings.showsCodexKey) private var showsCodex = true
     @AppStorage(UsageDisplaySettings.showsGrokKey) private var showsGrok = true
+    @AppStorage(UsageDisplaySettings.refreshIntervalSecondsKey) private var refreshIntervalSeconds =
+        UsageDisplaySettings.refreshIntervalDefaultSeconds
     @State private var isSettingsPresented = false
     @State private var draftShowsAccountIdentifiers = UsageDisplaySettings.showsAccountIdentifiersDefault
     @State private var draftShowsClaude = true
     @State private var draftShowsCodex = true
     @State private var draftShowsGrok = true
+    @State private var draftRefreshIntervalSteps: Double =
+        UsageDisplaySettings.refreshIntervalDefaultSeconds / UsageDisplaySettings.refreshIntervalStepSeconds
 #if USAGE_APP_STORE
     @State private var draftReviewerSampleModeEnabled = false
 #endif
@@ -48,9 +52,6 @@ struct DashboardView: View {
 
             VStack(spacing: AppLayout.contentSpacing) {
                 MacAwakePanel(controller: self.macAwake)
-                if self.showsClaude {
-                    ClaudeWindowAlignmentPanel(controller: self.windowAlignment)
-                }
             }
                 .padding(.horizontal, AppLayout.contentHorizontalPadding)
                 .padding(.top, AppLayout.contentVerticalPadding)
@@ -62,6 +63,11 @@ struct DashboardView: View {
                             status: status,
                             showsAccountIdentifiers: self.showsAccountIdentifiers,
                             resetDisplayMode: self.resetDisplayMode)
+                        // Each anchor lives with its provider card, so the
+                        // toggle reads as a per-provider setting.
+                        if status.provider == .claude {
+                            ClaudeWindowAlignmentPanel(controller: self.windowAlignment)
+                        }
                     }
                 }
                 .padding(.horizontal, AppLayout.contentHorizontalPadding)
@@ -76,7 +82,7 @@ struct DashboardView: View {
             }
             .frame(height: self.contentViewportHeight)
             .scrollIndicators(
-                self.measuredContentHeight > AppLayout.maximumContentHeight ? .visible : .hidden)
+                self.measuredContentHeight > self.currentContentHeightCap ? .visible : .hidden)
             .onPreferenceChange(DashboardContentHeightPreferenceKey.self) { newHeight in
                 guard newHeight > 0, abs(newHeight - self.measuredContentHeight) > 0.5 else { return }
                 self.measuredContentHeight = newHeight
@@ -89,6 +95,7 @@ struct DashboardView: View {
         .fixedSize(horizontal: false, vertical: true)
         .background(Color(nsColor: .windowBackgroundColor))
         .onAppear {
+            self.monitor.setRefreshInterval(seconds: self.refreshIntervalSeconds)
             self.monitor.start()
             self.windowAlignment.reconcileClaudeProviderVisibility(self.showsClaude)
             self.windowAlignment.start()
@@ -167,6 +174,35 @@ struct DashboardView: View {
 
             Divider()
 
+            VStack(alignment: .leading, spacing: 7) {
+                HStack {
+                    Text("Auto-refresh")
+                        .font(AppFont.captionSemibold)
+                        .foregroundStyle(.secondary)
+                    Spacer()
+                    Text(UsageDisplaySettings.refreshIntervalLabel(
+                        forSteps: Int(self.draftRefreshIntervalSteps)))
+                        .font(AppFont.captionMonospaced)
+                        .foregroundStyle(.secondary)
+                }
+                Slider(
+                    value: self.$draftRefreshIntervalSteps,
+                    in: 1...360,
+                    step: 1,
+                    onEditingChanged: { editing in
+                        guard !editing else { return }
+                        self.draftRefreshIntervalSteps = self.draftRefreshIntervalSteps.rounded()
+                    })
+                    // Blend the filled portion into the track: at the default
+                    // 5-minute position the accent-colored stub reads as an
+                    // unexplained dark bar in the plain settings panel.
+                    .tint(Color(nsColor: .quaternaryLabelColor))                    .help("Refresh every 10-second steps, from 10 seconds to 1 hour. Applies when you press Apply.")
+                Text("10-second steps, 10 s – 1 h. Shorter intervals poll the provider CLIs more often.")
+                    .font(AppFont.caption)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
             Toggle("Show account identifiers", isOn: self.$draftShowsAccountIdentifiers)
                 .toggleStyle(.checkbox)
 
@@ -227,10 +263,11 @@ struct DashboardView: View {
                     if self.monitor.reviewerSampleModeEnabled {
                         Label("Reviewer samples · not live data", systemImage: "testtube.2")
                     } else {
-                        Label("Sandbox build · provider data sources unavailable", systemImage: "lock.shield")
                     }
 #else
-                    Label("Local CLI data · refreshes every 5 min", systemImage: "lock.shield")
+                    Label(
+                        "Local CLI data · refreshes every \(UsageDisplaySettings.refreshIntervalLabel(forSteps: UsageDisplaySettings.clampedRefreshIntervalSteps(forSeconds: self.refreshIntervalSeconds)))",
+                        systemImage: "lock.shield")
 #endif
                 }
                 .foregroundStyle(.secondary)
@@ -337,6 +374,8 @@ struct DashboardView: View {
         self.draftShowsCodex = self.showsCodex
         self.draftShowsGrok = self.showsGrok
         self.draftShowsAccountIdentifiers = self.showsAccountIdentifiers
+        self.draftRefreshIntervalSteps = Double(UsageDisplaySettings.clampedRefreshIntervalSteps(
+            forSeconds: self.refreshIntervalSeconds))
 #if USAGE_APP_STORE
         self.draftReviewerSampleModeEnabled = self.monitor.reviewerSampleModeEnabled
 #endif
@@ -345,10 +384,13 @@ struct DashboardView: View {
     private func applySettingsDraft() {
         guard self.draftHasVisibleProvider else { return }
         self.showsClaude = self.draftShowsClaude
-        self.windowAlignment.reconcileClaudeProviderVisibility(self.draftShowsClaude)
         self.showsCodex = self.draftShowsCodex
         self.showsGrok = self.draftShowsGrok
         self.showsAccountIdentifiers = self.draftShowsAccountIdentifiers
+        self.refreshIntervalSeconds = UsageDisplaySettings.refreshIntervalSeconds(
+            forSteps: Int(self.draftRefreshIntervalSteps))
+        self.monitor.setRefreshInterval(seconds: self.refreshIntervalSeconds)
+        self.windowAlignment.reconcileClaudeProviderVisibility(self.draftShowsClaude)
         self.isSettingsPresented = false
 #if USAGE_APP_STORE
         let reviewerSampleModeEnabled = self.draftReviewerSampleModeEnabled
@@ -358,11 +400,18 @@ struct DashboardView: View {
 #endif
     }
 
+    /// Provider cards scroll only past the card cap plus one allowance per
+    /// grouped anchor panel, so a provider below two anchors stays on screen.
+    private var currentContentHeightCap: CGFloat {
+        let anchorPanelCount = self.visibleProviders.filter { $0 == .claude || $0 == .codex }.count
+        return AppLayout.maximumContentHeight(anchorPanelCount: anchorPanelCount)
+    }
+
     private var contentViewportHeight: CGFloat {
         let contentHeight = self.measuredContentHeight > 0
             ? self.measuredContentHeight
             : AppLayout.estimatedContentHeight(providerCount: self.visibleProviders.count)
-        return min(contentHeight, AppLayout.maximumContentHeight)
+        return min(contentHeight, self.currentContentHeightCap)
     }
 
     private var resetDisplayHelp: String {
@@ -443,6 +492,7 @@ private struct MacAwakePanel: View {
                     in: Double(MacAwakeSettings.minimumActiveDurationHours)...Double(
                         MacAwakeSettings.maximumActiveDurationHours),
                     step: 1)
+                    .tint(Color(nsColor: .quaternaryLabelColor))
                     .help("Choose infinity or an automatic duration from 1 to 24 hours.")
                     .disabled(!self.controller.isEnabled)
                 self.durationLabel
@@ -572,6 +622,10 @@ private struct ClaudeWindowAlignmentPanel: View {
                         guard !editing else { return }
                         self.controller.setAnchorHour(Int(self.draftAnchorHour.rounded()))
                     })
+                    // Same track de-emphasis as the settings slider: with a
+                    // graphite system accent the default track reads as a
+                    // black line on the card.
+                    .tint(Color(nsColor: .quaternaryLabelColor))
                     .help("Set the anchor start hour. Changes apply when you release the slider.")
                 Text(String(format: "%02d:00", Int(self.draftAnchorHour.rounded())))
                     .font(AppFont.captionMonospaced)

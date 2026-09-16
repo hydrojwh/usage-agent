@@ -137,8 +137,44 @@ public enum UsageDisplaySettings {
     public static let showsCodexKey = "showsProviderCodex"
     public static let showsGrokKey = "showsProviderGrok"
 
+    public static let refreshIntervalSecondsKey = "refreshIntervalSeconds"
+    public static let refreshIntervalDefaultSeconds: Double = 300
+    public static let minimumRefreshIntervalSeconds: Double = 10
+    public static let maximumRefreshIntervalSeconds: Double = 3600
+    public static let refreshIntervalStepSeconds: Double = 10
+
+    /// Slider position in 10-second steps: 1 (10 s) … 360 (1 h).
+    public static func clampedRefreshIntervalSteps(forSeconds seconds: Double) -> Int {
+        let raw = (seconds / self.refreshIntervalStepSeconds).rounded()
+        let maximumSteps = Int(self.maximumRefreshIntervalSeconds / self.refreshIntervalStepSeconds)
+        return min(maximumSteps, max(1, Int(raw)))
+    }
+
+    public static func refreshIntervalSeconds(forSteps steps: Int) -> Double {
+        Double(self.clampedRefreshIntervalSteps(forSeconds: Double(steps) * self.refreshIntervalStepSeconds))
+            * self.refreshIntervalStepSeconds
+    }
+
+    public static func refreshIntervalLabel(forSteps steps: Int) -> String {
+        let whole = Int(self.refreshIntervalSeconds(forSteps: steps))
+        let hours = whole / 3600
+        let minutes = whole % 3600 / 60
+        let seconds = whole % 60
+        if hours > 0 {
+            return minutes > 0 ? "\(hours)h \(minutes)m" : "\(hours)h"
+        }
+        if minutes > 0 {
+            return seconds > 0 ? "\(minutes)m \(seconds)s" : "\(minutes)m"
+        }
+        return "\(seconds)s"
+    }
+
     public static func showsClaude(defaults: UserDefaults = .standard) -> Bool {
         defaults.object(forKey: self.showsClaudeKey) as? Bool ?? true
+    }
+
+    public static func showsCodex(defaults: UserDefaults = .standard) -> Bool {
+        defaults.object(forKey: self.showsCodexKey) as? Bool ?? true
     }
 
     public static func identityText(

@@ -28,7 +28,7 @@
     {
       "mode": "100644",
       "path": ".usage-agent-source.json",
-      "sha256": "0d491dc036ebb621c975ec6ea259d6dabc37c755e4cae7c51aa74dcbd246eca1"
+      "sha256": "c9c4a4a073f27aaee513f850fd50ce02d0de93fdbff20f622df7550b93e54b81"
     },
     {
       "mode": "100644",
@@ -48,7 +48,7 @@
     {
       "mode": "100644",
       "path": "README.md",
-      "sha256": "551da0b1125aa790e10bb8669ec5e74424bf84c5e410459657e03ccfb5b6bec7"
+      "sha256": "6018f4a63386b370dccc8edfe22fa8d7ad190f6682fcc0651274744d36d6f817"
     },
     {
       "mode": "100644",
@@ -63,7 +63,7 @@
     {
       "mode": "100644",
       "path": "Sources/UsageApp/AppStyle.swift",
-      "sha256": "0e9e74b2ad78c643f66480cb8994dedcc536d8a901b2638f44b7d9e465cf6eff"
+      "sha256": "e5f9d9b8b52bc5789ddd11910ff38a9865759caccd135231cb5978beb002f2c9"
     },
     {
       "mode": "100644",
@@ -163,7 +163,7 @@
     {
       "mode": "100644",
       "path": "Sources/UsageApp/DashboardView.swift",
-      "sha256": "267761ce7ef1d148217141dc83c0d401fe2dfbf97640e807ecef6581e5dbf0f3"
+      "sha256": "79dbe919d3ec7eb842a67be885b921a4355b00d24650125a724874d3ee9db69b"
     },
     {
       "mode": "100644",
@@ -218,7 +218,7 @@
     {
       "mode": "100644",
       "path": "Sources/UsageApp/UsageMonitor.swift",
-      "sha256": "455a9da28f92d9e071262becac4ae87a484dedfc7af00770cda69a7c57a7023f"
+      "sha256": "240e6e97328d6bc86dfdc730150475e1f0b39f29cd0b39dc39db2a79d023a3c4"
     },
     {
       "mode": "100644",
@@ -243,7 +243,7 @@
     {
       "mode": "100644",
       "path": "Sources/UsageCore/ProviderUsage.swift",
-      "sha256": "d966477a978b54ca0b2aab5e69bdd38af23c19d700611ae8e74964b9e77e6e1b"
+      "sha256": "b8f86b8f0d73839b88ef4cf280da5fae14a0b8f8f74c3bb2bc37affc53566e85"
     },
     {
       "mode": "100644",
@@ -339,6 +339,11 @@
       "mode": "100644",
       "path": "Tests/UsageCoreTests/ProviderUsageMappingTests.swift",
       "sha256": "b790ea862025cfbe1e3afaf3167b2ebfad20446a79a04e3e36757e2927c3118f"
+    },
+    {
+      "mode": "100644",
+      "path": "Tests/UsageCoreTests/RefreshIntervalSettingsTests.swift",
+      "sha256": "5fb998b18222cf11e2184695c06684ee6be4a3f5e5e7acb1fbf039e6db9e09af"
     },
     {
       "mode": "100644",
@@ -518,7 +523,7 @@
     {
       "mode": "100644",
       "path": "project.yml",
-      "sha256": "4c13ab1f217047f024a8a64d54623d02d01b068ff9d756fdde7686a6979da1ce"
+      "sha256": "a807e27f656c03af9a9e5a8aeb120e8ab59fbe842a05e8e6d7cbdd4f172325cc"
     },
     {
       "mode": "100755",
@@ -527,5 +532,5 @@
     }
   ],
   "schema_version": 2,
-  "source_revision": "49b5ee7ce2bb0b2cfce039ca5e2bc6295b3c5b05"
+  "source_revision": "d960237a76d1281603395ce032257b5491b149a0"
 }
